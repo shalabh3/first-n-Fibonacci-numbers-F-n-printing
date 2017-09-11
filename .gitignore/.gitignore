@@ -1,0 +1,51 @@
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+int main()
+{
+	int j = 1;
+	int k = 0;
+	int l = 0;
+	int n;
+	printf("Enter the maximum number");
+	scanf("%d", &n);
+	for ( int i = 1 ; i<=n ; i++)
+	{
+		int k = l + j;
+		if ( k % 5 == 0)
+		{
+			printf("\t Fizz");
+			if (k % 3 == 0)
+			{
+				printf("Buzz");
+			}
+		}
+		else if (k % 3 == 0)
+		{
+			printf("\t Buzz", k);
+		}
+		
+		else
+		{
+			int flag = 0;
+			int q = k / 2;
+			for (int p = 2; p <= q; p++)
+			{
+				if (k%p == 0)
+				{
+					flag = 1;
+				}
+			}
+
+			if ((flag == 0) && (k!=1))
+				printf("\t BuzzFizz", k);
+			else
+			 printf("\t %d", k);
+		}
+		l = j;
+		j = k;
+		
+	}
+	getch();
+	return 0;
+}
